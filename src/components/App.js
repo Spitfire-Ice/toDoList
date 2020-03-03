@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './app.scss';
 import Task from "./Task";
+import TaskInput from "./TaskInput";
 
 
 class App extends Component {
@@ -12,6 +13,18 @@ class App extends Component {
     ]
   };
 
+
+  addTask = task => {
+    this.setState( state =>{
+      let { tasks } = state;
+      tasks.push({
+        id: tasks.length !== 0 ? tasks.length : 0,
+        title: task,
+        done: false
+      });
+      return tasks
+    })
+  };
   doneTask = id => {
     const index = this.state.tasks.map( task => task.id).indexOf(id);
     this.setState(state => {
@@ -44,6 +57,7 @@ class App extends Component {
             task={task}
             key={task.id} />
         ))}
+        <TaskInput addTask={this.addTask} />
       </div>
     );
   }

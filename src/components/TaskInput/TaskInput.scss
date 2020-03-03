@@ -1,0 +1,30 @@
+.task-input {
+ border-radius: 5px;
+ display: flex;
+ padding: 5px;
+ width: 100%;
+ background-color: darkgray;
+}
+
+.task-input * {
+ border-radius: 5px;
+}
+
+.task-input input {
+ width: 100%;
+ border: none;
+ padding: 5px;
+ font-size: 18px;
+ font-weight: 500;
+ margin-left: 5px;
+}
+
+.task-input button {
+ background-color: transparent;
+ font-size: 18px;
+ text-transform: uppercase;
+ color: #000000;
+ cursor: pointer;
+ margin-left: 10px;
+ margin-right: 5px;
+}
